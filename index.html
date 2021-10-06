@@ -7,15 +7,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
-  <!-- <style>
+  <style>
     #content,
     #authorize-button,
     #signout-button {
       display: none
-    } -->
+    }
+    .space{
+      margin-top: 30px;
+    }
+    @media (max-width:968px){
+      a{
+        
+        width: fit-content;
+        padding: auto;
+        margin: auto;
+      }
+    }
   </style>
 
-  <title>YouTube Channel Data</title>
+  <title>YouTube API</title>
 </head>
 
 <body>
@@ -28,7 +39,7 @@
   </nav>
   <br>
   <section>
-    <div class="container">
+    <div class="container space">
       <p>Log In With Google</p>
       <button class="btn red" id="authorize-button">Log In</button>
       <button class="btn red" id="signout-button">Log Out</button>

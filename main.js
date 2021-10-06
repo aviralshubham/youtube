@@ -3,8 +3,10 @@ const CLIENT_ID = '155319212062-qu0cfoofcioe6s9b07jfbagaahq15s4b.apps.googleuser
 const DISCOVERY_DOCS = [
   'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'
 ];
+const data = 'https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyCqDzGjfYu61USSjjt67CLp_lWUPN1VLNE&part=snippet,contentDetails,statistics,status'
 const SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
-
+ 
+console.log(data);
 const authorizeButton = document.getElementById('authorize-button');
 const signoutButton = document.getElementById('signout-button');
 const content = document.getElementById('content');
@@ -12,7 +14,7 @@ const channelForm = document.getElementById('channel-form');
 const channelInput = document.getElementById('channel-input');
 const videoContainer = document.getElementById('video-container');
 
-const defaultChannel = 'techguyweb';
+const defaultChannel = 'XEETECHCARE';
 
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
@@ -48,18 +50,18 @@ function initClient() {
 
 // Update UI sign in state changes
 function updateSigninStatus(isSignedIn) {
-  // if (isSignedIn) {
+  if (isSignedIn) {
     authorizeButton.style.display = 'none';
     signoutButton.style.display = 'block';
     content.style.display = 'block';
     videoContainer.style.display = 'block';
     getChannel(defaultChannel);
-  // } else {
-  //   authorizeButton.style.display = 'block';
-  //   signoutButton.style.display = 'none';
-  //   content.style.display = 'none';
-  //   videoContainer.style.display = 'none';
-  // }
+  } else {
+    authorizeButton.style.display = 'block';
+    signoutButton.style.display = 'none';
+    content.style.display = 'none';
+    videoContainer.style.display = 'none';
+  }
 }
 
 // Handle login
